@@ -1,0 +1,25 @@
+{
+  "name": "docker-maps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-img": "docker build --no-cache -f ./Dockerfile -t 'tl:01' .",
+    "start": "docker run --name tl -it --rm -v $(pwd)/maps:/maps tl:01 ville",
+    "start-osm": "docker run --name tl -it --rm -v $(pwd)/maps:/maps tl:01 osm ville",
+    "sh": "docker run --name tl-sh -it --rm -v $(pwd)/maps:/maps --entrypoint sh tl:01"
+  },
+  "dependencies": {
+    "@mapbox/mbtiles": "^0.12.1",
+    "@mapbox/tilejson": "^1.1.0",
+    "@mapbox/tilelive": "^6.1.0",
+    "sync-fetch": "^0.3.0",
+    "tilelive-file": "0.0.3",
+    "tilelive-http": "^0.14.0",
+    "querystring": "^0.2.0",
+    "tl": "^0.10.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
