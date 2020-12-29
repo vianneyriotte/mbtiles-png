@@ -8,20 +8,6 @@ const response = fetch(
 );
 const json = response.json();
 
-/*
-console.log(json[0].osm_id);
-console.log(
-	'' +
-		json[0].boundingbox[2] +
-		' ' +
-		json[0].boundingbox[0] +
-		' ' +
-		json[0].boundingbox[3] +
-		' ' +
-		json[0].boundingbox[1]
-);
-*/
-
 console.log(
 	`"${process.argv[2].split(' ').join('_')}" "${'' +
 		json[0].boundingbox[2] +
